@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Crypto Wallet</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Cryptocurrency Wallet</h1>
+
+    <form action="/create-wallet" method="post">
+
+        <button type="submit">
+            Create Wallet
+        </button>
+
+    </form>
+
+    <div th:if="${wallet}">
+
+        <h3>Wallet Address</h3>
+
+        <p th:text="${wallet.address}"></p>
+
+        <h3>Private Key</h3>
+
+        <p th:text="${wallet.privateKey}"></p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
